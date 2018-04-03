@@ -9,9 +9,11 @@
   "dependencies": {
     "lodash": "^4.17.4",
     "moment": "^2.20.1",
+    "prop-types": "^15.6.0",
     "react": "16.2.0",
-    "react-native": "0.52.2",
+    "react-native": "0.54.2",
     "react-native-events-calendar": "^1.0.8",
+    "react-native-loading-spinner-overlay": "^0.5.2",
     "react-native-qrcode": "^0.2.6",
     "react-native-swiper": "^1.5.13",
     "react-native-tab-navigator": "^0.3.4",

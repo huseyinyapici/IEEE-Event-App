@@ -1,9 +1,40 @@
 import React from 'react';
-import { View, Text, Dimensions } from 'react-native';
+import { View, Text, Dimensions, AsyncStorage } from 'react-native';
 import QRCode from 'react-native-qrcode';
-
+import * as utils from '../utils';
 
 export default class QRScreen extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+
+
+        this.fetch = this.fetch.bind(this);
+    }
+
+    state = {
+        data: '',
+    }
+
+    componentWillMount() {
+        this.fetch();
+    }
+
+
+
+    async fetch() {
+        try {
+            const res = await AsyncStorage.getItem(utils.KEY_USER);
+            if (res !== null) {
+                this.setState({ data: res });
+            }
+
+        } catch (error) {
+            console.error('QRScreen : fetch ', error);
+        }
+    }
+
 
 
     render() {
@@ -17,7 +48,7 @@ export default class QRScreen extends React.Component {
                 </View>
                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', }} >
                     <QRCode
-                        value={'lknasdkasdnknaskdjnasdjknkj'}
+                        value={this.state.data}
                         size={w / 1.25}
                         bgColor='black'
                         fgColor='#f4f4f4' />

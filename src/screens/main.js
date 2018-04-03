@@ -41,7 +41,6 @@ export default class MainScreen extends React.Component {
 
 
     _onMomentumSwiperScrollEnd(e, state, context) {
-        console.warn(state.index)
         this.state.index = state.index;
         this.forceUpdate();
     }

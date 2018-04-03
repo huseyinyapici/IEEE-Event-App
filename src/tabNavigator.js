@@ -25,7 +25,9 @@ export default class TabNavScreen extends React.Component {
                         selected={this.state.selectedTab === SCREEN_HOME}
                         title={'Program'}
                         titleStyle={{ color: 'black' }}
-                        // renderIcon={() => <Icon active name='home' size={30} color={'black'} />}
+                        renderIcon={() => <View style={{ height: 30, width: 30,backgroundColor:'black' }} />
+
+                        }
                         onPress={() => this.setState({ selectedTab: SCREEN_HOME })}>
                         <MainScreen />
                     </TabNavigator.Item>
@@ -35,6 +37,7 @@ export default class TabNavScreen extends React.Component {
                         title="QR"
                         titleStyle={{ color: 'black' }}
                         // renderIcon={() => <Icon active name='library-books' size={30} color={'black'} />}
+                        renderIcon={() => <View style={{ height: 30, width: 30,backgroundColor:'black' }} />}
                         onPress={() => this.setState({ selectedTab: SCREEN_QR })}>
                         <QRScreen />
                     </TabNavigator.Item>
@@ -43,6 +46,7 @@ export default class TabNavScreen extends React.Component {
                         selected={this.state.selectedTab === SCREEN_NEWS}
                         title="Duyurular"
                         titleStyle={{ color: 'black' }}
+                        renderIcon={() => <View style={{ height: 30, width: 30,backgroundColor:'black' }} />}
                         // renderIcon={() => <Icon active name='ABOUT' size={30} color={'black'} />}
                         onPress={() => this.setState({ selectedTab: SCREEN_NEWS })}>
                         <NewsScreen />
@@ -52,6 +56,7 @@ export default class TabNavScreen extends React.Component {
                         selected={this.state.selectedTab === SCREEN_ABOUT}
                         title="IEEE ODTÜ"
                         titleStyle={{ color: 'black' }}
+                        renderIcon={() => <View style={{ height: 30, width: 30,backgroundColor:'black' }} />}
                         // renderIcon={() => <Icon active name='ABOUT' size={30} color={'black'} />}
                         onPress={() => this.setState({ selectedTab: SCREEN_ABOUT })}>
                         <AboutScreen />

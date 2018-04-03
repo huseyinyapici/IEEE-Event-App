@@ -1,5 +1,6 @@
 import { StackNavigator, NavigationActions } from 'react-navigation';
 import TabNavScreen from './tabNavigator';
+import RegisterScreen from './register'
 
 const routes = {
     TabNav: {
@@ -8,6 +9,12 @@ const routes = {
             header: null,
         },
     },
+    Register: {
+        screen: RegisterScreen,
+        navigationOptions: {
+            header: null,
+        },
+    }
 };
 
 
