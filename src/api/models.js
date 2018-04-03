@@ -3,6 +3,7 @@
 export default class UserInfo extends Object {
 
     id: string;
+    name: string;
     company: string;
     depart: string;
     clas: string;

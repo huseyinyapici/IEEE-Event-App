@@ -7,7 +7,7 @@ import Spinner from 'react-native-loading-spinner-overlay';
 import PropTypes from 'prop-types';
 import { MyTextInput } from './components'
 import * as utils from './utils';
-
+import * as api from './api';
 
 const KEY_ISLOGIN = 'isopen';
 const KEY_ANSWER_YES = "KEY_ANSWER_YES12";
@@ -95,17 +95,25 @@ export default class RegisterScreen extends React.Component {
             this.setState({ warn: "" })
             try {
 
-                const data = {
-                    name: this.state.name,
-                    company: this.state.company,
-                    depart: this.state.depart,
-                    class: this.state.clas,
-                    email: this.state.email
+                const user = new api.UserInfo();
+                user.name = this.state.name;
+                user.company = this.state.company;
+                user.depart = this.state.depart;
+                user.clas = this.state.clas;
+                user.email = this.state.email
+
+                const id = await api.sendUserInfo(user);
+                if (id) {
+                    // login is successfull
+                } else {
+                    // there are some problem
+                    // TODO show user error message
+
+                    const strData = JSON.stringify(user);
+                    await AsyncStorage.setItem(utils.KEY_USER, strData);
+                    await AsyncStorage.setItem(KEY_ISLOGIN, KEY_ANSWER_YES);
+                    utils.resetTo(this, 'TabNav')
                 }
-                const strData = JSON.stringify(data);
-                await AsyncStorage.setItem(utils.KEY_USER, strData);
-                await AsyncStorage.setItem(KEY_ISLOGIN, KEY_ANSWER_YES);
-                utils.resetTo(this, 'TabNav')
             } catch (error) {
                 // Error saving data
                 console.error('Boarding : onSubmit', error);
@@ -120,7 +128,7 @@ export default class RegisterScreen extends React.Component {
     render() {
         return (<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }} >
 
-            <View style={{justifyContent: 'center', alignItems: 'center', paddingTop: 16 }} >
+            <View style={{ justifyContent: 'center', alignItems: 'center', paddingTop: 16 }} >
                 <Text style={{ fontSize: 36, margin: 8, }} > Kayıt </Text>
             </View>
             <View style={{ flex: 1, marginTop: 30 }} >

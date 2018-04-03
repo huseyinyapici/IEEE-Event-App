@@ -1,4 +1,7 @@
 
+import UserInfo from './models';
+export { UserInfo };
+
 interface UserInfoModel {
     id: string,
     company: string,
@@ -6,7 +9,6 @@ interface UserInfoModel {
     clas: string,
     email: string,
 }
-
 
 
 /**
