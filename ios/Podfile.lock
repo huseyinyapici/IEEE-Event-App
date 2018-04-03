@@ -1,21 +1,19 @@
 PODS:
-  - React (0.11.0):
-    - React/Core (= 0.11.0)
+  - react-native-fetch-blob (0.10.6):
+    - React/Core
   - React/Core (0.11.0)
-  - RNVectorIcons (4.6.0):
-    - React
 
 DEPENDENCIES:
-  - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
+  - react-native-fetch-blob (from `../node_modules/react-native-fetch-blob`)
 
 EXTERNAL SOURCES:
-  RNVectorIcons:
-    :path: ../node_modules/react-native-vector-icons
+  react-native-fetch-blob:
+    :path: ../node_modules/react-native-fetch-blob
 
 SPEC CHECKSUMS:
   React: ab1a2e21deb34965c38328d5ec40cc7d12c6050a
-  RNVectorIcons: a3c395829c56e2cb054a0730126298bf805a2dca
+  react-native-fetch-blob: 2bef9be702de8726f4d7bf58d2345579aaaee60d
 
-PODFILE CHECKSUM: 4a2b9285e99e4ae844fd5c74f879c2ea0eaf30c3
+PODFILE CHECKSUM: d164f12be795cd3f8427fde56b4a82d7fad244b8
 
 COCOAPODS: 1.3.1

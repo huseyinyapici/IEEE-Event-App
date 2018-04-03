@@ -27,6 +27,7 @@ export default class QRScreen extends React.Component {
         try {
             const res = await AsyncStorage.getItem(utils.KEY_USER);
             if (res !== null) {
+
                 this.setState({ data: res });
             }
 
