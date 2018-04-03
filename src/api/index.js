@@ -19,7 +19,7 @@ interface UserInfoModel {
  */
 export async function sendUserInfo(user) {
     try {
-        fetch('https://mywebsite.com/endpoint/', {
+        const res = await fetch('https://mywebsite.com/endpoint/', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -30,5 +30,50 @@ export async function sendUserInfo(user) {
 
     } catch (error) {
         console.error('api::register::error ', error)
+    }
+}
+
+
+/**
+ * 
+ * get Announcement from server
+ * 
+ * @export
+ */
+export async function getAnnouncement() {
+    try {
+        const res = await fetch('https://mywebsite.com/endpoint/', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: user,
+        });
+
+    } catch (error) {
+        console.error('api::getAnnouncement::error ', error)
+    }
+}
+
+
+/**
+ * get program from server
+ * 
+ * @export
+ */
+export async function getProgram() {
+    try {
+        const res = await fetch('https://mywebsite.com/endpoint/', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: user,
+        });
+
+    } catch (error) {
+        console.error('api::getProgram::error ', error)
     }
 }
