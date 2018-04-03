@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Dimensions, ScrollView } from 'react-native';
+import * as styles from '../globalStyles';
 
 const mockData = [
     {
@@ -16,9 +17,14 @@ export default class NewsScreen extends React.Component {
 
         const h = Dimensions.get('window').height;
         return (
-            <View style={{ height: 160, margin: 8, padding: 4, borderWidth: 1, borderColor: 'gray',backgroundColor:'#f4f4f4' }} >
+            <View style={{
+                height: 160,
+                margin: 4, padding: 4, borderWidth: 1.5,
+                borderRadius: 4,
+                borderColor: 'gray', backgroundColor: '#f4f4f4'
+            }} >
                 <View style={{ height: 30, }} >
-                    <Text style={{ fontSize: 22, margin: 4, fontWeight: '600' }} >
+                    <Text style={{ fontSize: 22, margin: 4, fontWeight: '800',}} >
                         {item.title}
                     </Text>
                 </View>
@@ -27,9 +33,9 @@ export default class NewsScreen extends React.Component {
                         {item.text}
                     </Text>
                 </View>
-                <View style={{ height: 1, marginHorizontal: 12,backgroundColor:'gray' }} />
+                <View style={{ height: 1, marginHorizontal: 12, backgroundColor: 'gray' }} />
 
-                <View style={{ height: 24, margin: 8, justifyContent: 'space-between', flexDirection: 'row',alignItems:'center' }} >
+                <View style={{ height: 24, margin: 8, justifyContent: 'space-between', flexDirection: 'row', alignItems: 'center' }} >
                     <View style={{ height: 24 }} >
                         <Text style={{ fontSize: 12, margin: 4 }}> @ieeeodtü </Text>
                     </View>

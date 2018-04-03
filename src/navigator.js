@@ -21,7 +21,7 @@ const routes = {
 
 export const AppNavigator = StackNavigator(routes,
     {
-        initialRouteName: 'TabNav',
+        initialRouteName: 'Register',
         headerMode: 'none',
     },
 );
