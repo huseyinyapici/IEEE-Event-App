@@ -40,7 +40,7 @@ export default function styleConstructor (
     },
     event: {
       position: 'absolute',
-      backgroundColor: '#F0F4FF',
+      backgroundColor: 'rgb(2,17,28)',
       opacity: 0.8,
       borderColor: '#DDE5FD',
       borderWidth: 1,
@@ -56,13 +56,13 @@ export default function styleConstructor (
       ...theme.event
     },
     eventTitle: {
-      color: '#615B73',
+      color: 'white',
       fontWeight: '600',
       minHeight: 15,
       ...theme.eventTitle
     },
     eventSummary: {
-      color: '#615B73',
+      color: 'rgba(255,255,255,0.5)',
       fontSize: 12,
       flexWrap: 'wrap',
       ...theme.eventSummary
@@ -71,7 +71,7 @@ export default function styleConstructor (
       marginTop: 3,
       fontSize: 10,
       fontWeight: 'bold',
-      color: '#615B73',
+      color: 'rgba(255,255,255,0.5)',
       flexWrap: 'wrap',
       ...theme.eventTimes
     },
