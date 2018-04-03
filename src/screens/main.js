@@ -29,7 +29,7 @@ export default class MainScreen extends React.Component {
         super(props);
 
         this.state = {
-            index: 0,step:0
+            index: 0, step: 0
         }
         this._onMomentumSwiperScrollEnd = this._onMomentumSwiperScrollEnd.bind(this);
     }
@@ -105,7 +105,7 @@ export default class MainScreen extends React.Component {
 
         return (
             <View style={{ flex: 1, backgroundColor: '#f4f4f4' }} >
-                <View style={{ height: 80, justifyContent: 'center', alignItems: 'center' }} >
+                <View style={{ justifyContent: 'center', alignItems: 'center', padding: 8, margin: 4 }} >
                     <Text style={{ fontSize: 28 }} >
                         Kampüs Gelişim Günleri
                 </Text>
@@ -118,26 +118,26 @@ export default class MainScreen extends React.Component {
                 <Swiper
                     onMomentumScrollEnd={this._onMomentumSwiperScrollEnd}
                 >
-                
+
                     <EventCalendar
-                    key={1}
-                    eventTapped={this._eventTapped.bind(this)}
+                        key={1}
+                        eventTapped={this._eventTapped.bind(this)}
                         events={events1}
                         width={width}
                         initDate={'2017-09-07'}
                     />
 
                     <EventCalendar
-                    key={2}
-                    eventTapped={this._eventTapped.bind(this)}
+                        key={2}
+                        eventTapped={this._eventTapped.bind(this)}
                         events={events2}
                         width={width}
                         initDate={'2017-09-08'}
                     />
 
                     <EventCalendar
-                    key={3}
-                    eventTapped={this._eventTapped.bind(this)}
+                        key={3}
+                        eventTapped={this._eventTapped.bind(this)}
                         events={events3}
                         width={width}
                         initDate={'2017-09-09'}
