@@ -315,7 +315,7 @@ ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 </string>
 			<key>License</key>
-			<string>BSD</string>
+			<string>BSD-3-Clause</string>
 			<key>Title</key>
 			<string>React</string>
 			<key>Type</key>

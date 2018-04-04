@@ -21,7 +21,7 @@ export default class NewsScreen extends React.Component {
                 height: 160,
                 margin: 4, padding: 4, borderWidth: 1.5,
                 borderRadius: 4,
-                borderColor: 'gray', backgroundColor: '#f4f4f4'
+                borderColor: 'gray', backgroundColor: 'white'
             }} >
                 <View style={{ height: 30, }} >
                     <Text style={{ fontSize: 22, margin: 4, fontWeight: '800',}} >

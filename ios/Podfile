@@ -6,10 +6,28 @@ target 'kggMobil' do
   # use_frameworks!
 
   # Pods for kggMobil
+  rn_path = '../node_modules/react-native'
+  
+  pod 'yoga', path: "#{rn_path}/ReactCommon/yoga/yoga.podspec"
+  pod 'React', path: rn_path, subspecs: [
+    'Core',
+    'DevSupport',
+    'RCTActionSheet',
+    'RCTAnimation',
+    'RCTGeolocation',
+    'RCTImage',
+    'RCTLinkingIOS',
+    'RCTNetwork',
+    'RCTSettings',
+    'RCTText',
+    'RCTVibration',
+    'RCTWebSocket',
+  ]
 
-
-
+  # pod 'Mixpanel'
   pod 'react-native-mixpanel', :path => '../node_modules/react-native-mixpanel'
+
+  pod 'react-native-fetch-blob', :path => '../node_modules/react-native-fetch-blob'
 
 end
 
