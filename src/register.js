@@ -9,7 +9,7 @@ import { MyTextInput } from './components'
 import * as utils from './utils';
 import * as api from './api';
 
-const KEY_ISLOGIN = 'isopen2222';
+const KEY_ISLOGIN = 'isopen';
 const KEY_ANSWER_YES = "KEY_ANSWER_YES12";
 const KEY_ANSWER_NO = "KEY_ANSWER_NO12";
 
