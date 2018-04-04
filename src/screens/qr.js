@@ -28,7 +28,11 @@ export default class QRScreen extends React.Component {
             const res = await AsyncStorage.getItem(utils.KEY_USER);
             if (res !== null) {
 
-                this.setState({ data: res });
+                const id = JSON.parse(res).id;
+                console.warn(id);
+                const asss = "token";
+
+                this.setState({ data: asss });
             }
 
         } catch (error) {
@@ -44,7 +48,7 @@ export default class QRScreen extends React.Component {
 
         return (
             <View style={{ flex: 1, backgroundColor: '#f4f4f4', justifyContent: 'center', alignItems: 'center' }} >
-                <Text style={{ fontSize: w / 9.41, margin: 8 }} > Kimlik </Text>
+                <Text style={{ fontSize: w / 9.41, margin: 8, marginTop: 16 }} > Kimlik </Text>
                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', }} >
                     <QRCode
                         value={this.state.data}

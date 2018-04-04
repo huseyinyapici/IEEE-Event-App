@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, Dimensions, ScrollView } from 'react-native';
 import * as styles from '../globalStyles';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const mockData = [
     {
@@ -23,23 +24,21 @@ export default class NewsScreen extends React.Component {
                 borderRadius: 4,
                 borderColor: 'gray', backgroundColor: 'white'
             }} >
-                <View style={{ height: 30, }} >
-                    <Text style={{ fontSize: 22, margin: 4, fontWeight: '800',}} >
+                    <Text style={{ fontSize: 22, margin: 4, fontWeight: '800', }} >
                         {item.title}
                     </Text>
-                </View>
                 <View style={{ height: 80, marginTop: 8 }}>
                     <Text style={{ fontSize: 16, margin: 4, fontWeight: '400' }} >
                         {item.text}
                     </Text>
                 </View>
-                <View style={{ height: 1, marginHorizontal: 12, backgroundColor: 'gray' }} />
 
-                <View style={{ height: 24, margin: 8, justifyContent: 'space-between', flexDirection: 'row', alignItems: 'center' }} >
+                <View style={{ height: 24, margin: 4, justifyContent: 'space-between', flexDirection: 'row', alignItems: 'center' }} >
                     <View style={{ height: 24 }} >
                         <Text style={{ fontSize: 12, margin: 4 }}> @ieeeodtü </Text>
                     </View>
-                    <View style={{ height: 24 }} >
+                    <View style={{ height: 24, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }} >
+                        <Icon active name='alarm' size={20} color={'black'} />
                         <Text style={{ fontSize: 12, margin: 4 }}> {item.date} </Text>
                     </View>
                 </View>
