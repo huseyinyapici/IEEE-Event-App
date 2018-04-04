@@ -43,10 +43,8 @@ export default class QRScreen extends React.Component {
         const h = Dimensions.get('screen').height;
 
         return (
-            <View style={{ flex: 1, backgroundColor: '#f4f4f4' }} >
-                <View style={{ height: h / 8.33, justifyContent: 'center', alignItems: 'center' }} >
-                    <Text style={{ fontSize: w / 10.41 }} > Kimlik </Text>
-                </View>
+            <View style={{ flex: 1, backgroundColor: '#f4f4f4', justifyContent: 'center', alignItems: 'center' }} >
+                <Text style={{ fontSize: w / 9.41, margin: 8 }} > Kimlik </Text>
                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', }} >
                     <QRCode
                         value={this.state.data}
