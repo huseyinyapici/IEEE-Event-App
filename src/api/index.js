@@ -4,10 +4,12 @@ export { UserInfo };
 
 interface UserInfoModel {
     id: string,
-    company: string,
-    depart: string,
-    clas: string,
+    name: string,
+    institution: string,
+    dept: string,
+    grade: string,
     email: string,
+    phone: string,
 }
 
 
@@ -19,14 +21,20 @@ interface UserInfoModel {
  */
 export async function sendUserInfo(user) {
     try {
-        const res = await fetch('https://mywebsite.com/endpoint/', {
+        // console.error(user)
+
+        const res = await fetch('http://18.219.156.91:3001/dev/v0.1_alpha/participants/', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
             },
-            body: user,
-        });
+            body: JSON.stringify(user),
+        })
+
+        const json = await res.json();
+
+        return json.id;
 
     } catch (error) {
         console.error('api::register::error ', error)

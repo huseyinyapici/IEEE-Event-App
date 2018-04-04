@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 import { AppNavigator } from './navigator';
 import * as analytics from './analytics';
-
+import * as api from './api';
 
 export default class App extends Component {
   render() {

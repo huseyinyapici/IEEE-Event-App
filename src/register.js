@@ -9,7 +9,7 @@ import { MyTextInput } from './components'
 import * as utils from './utils';
 import * as api from './api';
 
-const KEY_ISLOGIN = 'isopen';
+const KEY_ISLOGIN = 'isopen26447dds';
 const KEY_ANSWER_YES = "KEY_ANSWER_YES12";
 const KEY_ANSWER_NO = "KEY_ANSWER_NO12";
 
@@ -33,9 +33,9 @@ export default class RegisterScreen extends React.Component {
 
     state = {
         name: 'a',
-        company: 'a',
-        depart: 'a',
-        clas: 'a', // not class :D
+        institution: 'a',
+        dept: 'a',
+        grade: 'a',
         email: 'a@a.com',
         valid: false,
         warn: '',
@@ -70,20 +70,23 @@ export default class RegisterScreen extends React.Component {
         if (this.state.name === '') {
             return false
         }
-        if (this.state.company === '') {
+        if (this.state.institution === '') {
             return false
         }
-        if (this.state.depart === '') {
+        if (this.state.dept === '') {
+            return false
+        }
+        if (this.state.grade === '') {
             return false
         }
         if (this.state.email === '') {
             return false
         }
-
         return true;
     }
 
     async onSubmit() {
+
         if (!this.state.valid) {
             this.setState({ warn: "Geçerli bir email adresi giriniz" })
             return;
@@ -96,23 +99,29 @@ export default class RegisterScreen extends React.Component {
             try {
 
                 const user = new api.UserInfo();
+
                 user.name = this.state.name;
-                user.company = this.state.company;
-                user.depart = this.state.depart;
-                user.clas = this.state.clas;
-                user.email = this.state.email
+                user.institution = this.state.institution;
+                user.dept = this.state.dept;
+                user.grade = this.state.grade;
+                user.email = this.state.email;
+
+
 
                 const id = await api.sendUserInfo(user);
                 if (id) {
                     // login is successfull
-                } else {
-                    // there are some problem
-                    // TODO show user error message
+
+                    user.id = id;
 
                     const strData = JSON.stringify(user);
                     await AsyncStorage.setItem(utils.KEY_USER, strData);
                     await AsyncStorage.setItem(KEY_ISLOGIN, KEY_ANSWER_YES);
                     utils.resetTo(this, 'TabNav')
+                } else {
+                    // there are some problem
+                    // TODO show user error message
+
                 }
             } catch (error) {
                 // Error saving data
@@ -166,9 +175,9 @@ export default class RegisterScreen extends React.Component {
 
                 <MyTextInput
                     key={3}
-                    onChangeText={(company) => {
+                    onChangeText={(institution) => {
                         this.setState(prev => ({
-                            company: company,
+                            institution: institution,
                         }));
                     }}
                     underlineColorAndroid={'rgba(0,0,0,0)'}
@@ -180,9 +189,9 @@ export default class RegisterScreen extends React.Component {
 
                 <MyTextInput
                     key={4}
-                    onChangeText={(depart) => {
+                    onChangeText={(dept) => {
                         this.setState(prev => ({
-                            depart: depart,
+                            dept: dept,
                         }));
                     }}
                     underlineColorAndroid={'rgba(0,0,0,0)'}
@@ -194,9 +203,9 @@ export default class RegisterScreen extends React.Component {
 
                 <MyTextInput
                     key={5}
-                    onChangeText={(clas) => {
+                    onChangeText={(grade) => {
                         this.setState(prev => ({
-                            clas: clas,
+                            grade: grade,
                         }));
                     }}
                     underlineColorAndroid={'rgba(0,0,0,0)'}
