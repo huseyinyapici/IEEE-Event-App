@@ -2,7 +2,7 @@ import { BaseAnalytics } from './base';
 
 const Mixpanel = require('react-native-mixpanel');
 
-const YOUR_PROJECT_TOKEN = '8c520c93d98f9abb4311e9921ada7bb2';
+const YOUR_PROJECT_TOKEN = '05d652ff271caa0d0b6732228f0080e3';
 
 export class MixPanelAnalytics extends BaseAnalytics {
   /**
