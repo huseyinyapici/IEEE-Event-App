@@ -9,5 +9,7 @@ target 'kggMobil' do
 
 
 
+  pod 'react-native-mixpanel', :path => '../node_modules/react-native-mixpanel'
+
 end
 
